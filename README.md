@@ -1,32 +1,85 @@
-# Employee Attrition Prediction for HR Analytics 📊
+# Employee Attrition Prediction for HR Analytics
 
-This project uses a machine learning model to predict employee attrition, helping HR departments proactively identify and address factors that may lead to employees leaving the company.
+## Overview
+An interactive web application built with Streamlit that helps HR professionals predict employee attrition using machine learning.
 
-## Project Description
+## Features
+- 🔮 Real-time attrition predictions
+- 📊 Interactive input controls
+- 💡 Common sense validation of predictions
+- 📈 Probability scores for prediction confidence
 
-This is an end-to-end HR analytics project built with Python, Pandas, scikit-learn, and Streamlit. The core of the project is a Random Forest Classifier model trained on the provided employee attrition dataset.
+## Technical Stack
+- Python 3.7+
+- Streamlit
+- Scikit-learn
+- Pandas
+- Joblib
 
-The project workflow is as follows:
-1.  **Model Training (`train_model.py`)**: A script that loads the dataset, preprocesses it, and trains a RandomForest model. The trained model and a list of its features are saved as `.pkl` files for efficient use.
-2.  **Interactive App (`app.py`)**: A Streamlit web application that loads the pre-trained model and provides a user-friendly interface. Users can input various employee details, and the app will provide a real-time prediction of whether the employee is likely to stay or leave.
+## Installation
 
-## How to Run Locally
+1. Clone the repository:
+```bash
+git clone <your-repository-url>
+cd Kuralarasan_Employee_Attrition_Prediction
+```
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-    cd your-repo-name
-    ```
-2.  **Install dependencies:**
-    ```bash
-    pip install streamlit pandas scikit-learn joblib
-    ```
-3.  **Run the training script to create the model files:**
-    ```bash
-    python train_model.py
-    ```
-4.  **Launch the Streamlit app:**
-    ```bash
-    streamlit run app.py
-    ```
-The application will open in your web browser.
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+1. First, train the model:
+```bash
+python train_model.py
+```
+
+2. Launch the Streamlit app:
+```bash
+streamlit run app.py
+```
+
+3. Open your browser and navigate to `http://localhost:8501`
+
+## Input Parameters
+
+### Demographics
+- **Age**: 18-65 years
+- **Gender**: Female/Male
+- **Marital Status**: Single/Married/Divorced
+
+### Job Related
+- **Department**: HR/R&D/Sales
+- **Job Role**: Multiple positions available
+- **Job Level**: Trainee to VP
+- **Years at Company**: 0-40 years
+- **Distance from Home**: 1-29 miles
+
+### Work Conditions
+- **Business Travel**: Non-Travel/Frequent/Rare
+- **Work Life Balance**: Scale 1-4
+- **Overtime**: Yes/No
+- **Job Satisfaction**: Scale 1-4
+
+### Career Metrics
+- **Monthly Income**: 2-24 LPA
+- **Years Since Last Promotion**: 0-15 years
+- **Number of Companies Worked**: 0-9
+
+## Project Structure
+```
+├── app.py                  # Main Streamlit application
+├── train_model.py         # Model training script
+├── attrition_model.pkl    # Trained model
+├── model_features.pkl     # Model features
+├── requirements.txt       # Project dependencies
+└── README.md             # Project documentation
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
